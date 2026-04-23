@@ -17,5 +17,6 @@ jobs:
             run:  pip install -r requirements.txt
 
           - name: Run python app
-            run: python test.py && python app.py
+            run: python test.py 
+            
             
