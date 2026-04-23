@@ -12,6 +12,9 @@ jobs:
         steps:
           - name: Checkout code
             uses: actions/checkout@v3
+
+          - name: Checking working-directory
+            run: pwd
             
           - name: Create python virtual environment 
             run : python3 -m venv .venv && .venv/scripts/activate
