@@ -1,0 +1,24 @@
+name: My First Workflows yml 
+
+on : 
+  push:
+    branches:  
+      - main
+
+jobs:
+  run-python-app:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v3
+            
+          - name: Create python virtual environment 
+            run : python3 -m venv .venv && .venv/scripts/activate
+
+          - name: Install Dependencies 
+            run:  pip install requirment.txt
+
+          - name: Run python app
+            run: python test.py && python app.py
+            
